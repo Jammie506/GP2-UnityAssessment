@@ -5,10 +5,10 @@ public class EnemyController : MonoBehaviour
 {
 
     // Declare a public variable to reference the Main Camera
-    public GameObject mainCamera;
+    public GameObject Controller;
     public const float PROXIMITY_DISTANCE = 1.0f;
     private GameObject currentTarget;
-    private EnemyManager waypointManager;
+    private EnemyManager wManager;
     const float DECELERATION_FACTOR = 0.6f;
     // Now variables needed by FixedUpdate
     Vector3 source;
@@ -19,12 +19,13 @@ public class EnemyController : MonoBehaviour
     Vector3 velocityToTarget;
     float distanceToTarget;
     float speed;
+
     // Use this for initialization
     void Awake()
     {
         // Get the WaypointManager from the camera and then the first object
-        waypointManager = mainCamera.GetComponent<EnemyManager>();
-        currentTarget = waypointManager.NextWaypoint(null);
+        wManager = Controller.GetComponent<EnemyManager>();
+        currentTarget = wManager.NextWaypoint(null);
     }
 
     void FixedUpdate()
@@ -37,9 +38,10 @@ public class EnemyController : MonoBehaviour
         // When it moves within the PROXIMITY_DISTANCE
         if (Vector3.Distance(source, target) < PROXIMITY_DISTANCE)
         {
-            currentTarget = waypointManager.NextWaypoint(currentTarget);
+            currentTarget = wManager.NextWaypoint(currentTarget);
         }
     }
+
     // Arrive function
     private Vector3 Arrive(Vector3 source, Vector3 target)
     {
