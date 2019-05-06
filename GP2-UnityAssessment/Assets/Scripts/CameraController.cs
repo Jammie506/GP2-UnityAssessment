@@ -2,7 +2,7 @@
 
 public class CameraController : MonoBehaviour
 {
-    public float Sensitivity = 5.0f;
+    public float Sensitivity;
     public float Smoothing = 2.0f;
     private Vector2 _mouseLook;
     private Vector2 _smoothV;
