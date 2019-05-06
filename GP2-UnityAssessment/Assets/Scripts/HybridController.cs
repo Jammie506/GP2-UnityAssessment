@@ -27,6 +27,7 @@ public class HybridController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
+    //Pathing + Waypoints
     void GotoNextPoint()
     {
         if (points.Length == 0)
@@ -37,21 +38,23 @@ public class HybridController : MonoBehaviour
         destPoint = (destPoint + 1) % points.Length;
     }
 
+    //Decision Tree 
     void Update()
     {
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
             GotoNextPoint();
 
-        if(isVisible)
+        if(isVisible && isAudible)
         {
             Debug.Log("Fucken found him");
         }
-        else if(!isVisible)
+        else if(!isVisible && !isAudible)
         {
             Debug.Log("Fucken lost him");
         }
     }
 
+    //Check enemy Line of Sight for Player tag
     private void OnTriggerStay(Collider other)
     {
         if(other.gameObject == player)
@@ -76,6 +79,7 @@ public class HybridController : MonoBehaviour
         }
     }
 
+    //Check enemy Hearing Range for Player tag
     void Audible()
     {
 

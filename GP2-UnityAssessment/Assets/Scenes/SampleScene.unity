@@ -955,6 +955,7 @@ GameObject:
   - component: {fileID: 229759924}
   - component: {fileID: 229759923}
   - component: {fileID: 229759922}
+  - component: {fileID: 229759921}
   - component: {fileID: 229759920}
   m_Layer: 0
   m_Name: Player
@@ -992,6 +993,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bSpeed: 50
   Sprint: 80
+--- !u!135 &229759921
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229759918}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &229759922
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5382,6 +5396,10 @@ PrefabInstance:
       propertyPath: DC
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1891955935, guid: 0862c0e6a4761fd4d8b09ea6594b07df, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 229759918}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0862c0e6a4761fd4d8b09ea6594b07df, type: 3}
 --- !u!4 &1186839730 stripped
@@ -7276,6 +7294,10 @@ PrefabInstance:
       propertyPath: DC
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1891955935, guid: 0862c0e6a4761fd4d8b09ea6594b07df, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 229759918}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0862c0e6a4761fd4d8b09ea6594b07df, type: 3}
 --- !u!4 &1572921588 stripped
@@ -8432,6 +8454,10 @@ PrefabInstance:
       propertyPath: DC
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1891955935, guid: 0862c0e6a4761fd4d8b09ea6594b07df, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 229759918}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0862c0e6a4761fd4d8b09ea6594b07df, type: 3}
 --- !u!4 &1790917901 stripped
@@ -8942,6 +8968,10 @@ PrefabInstance:
       propertyPath: DC
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1891955935, guid: 0862c0e6a4761fd4d8b09ea6594b07df, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 229759918}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0862c0e6a4761fd4d8b09ea6594b07df, type: 3}
 --- !u!4 &1917840140 stripped
@@ -9487,53 +9517,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 609667905}
   m_RootOrder: 38
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2046281221
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2046281223}
-  - component: {fileID: 2046281222}
-  m_Layer: 0
-  m_Name: UI Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2046281222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2046281221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6207e33621abe0e48b185c3074e9429e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealth: 10
-  timer: 0
-  PlayerHealth: {fileID: 128365971}
-  Timer: {fileID: 0}
---- !u!4 &2046281223
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2046281221}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 414.5683, y: 68.5802, z: 928.7178}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2048175302
 GameObject:
@@ -10647,10 +10630,9 @@ PrefabInstance:
       propertyPath: points.Array.data[7]
       value: 
       objectReference: {fileID: 951670725}
-    - target: {fileID: 4456079399328491038, guid: 0862c0e6a4761fd4d8b09ea6594b07df,
-        type: 3}
-      propertyPath: DC
+    - target: {fileID: 1891955935, guid: 0862c0e6a4761fd4d8b09ea6594b07df, type: 3}
+      propertyPath: Player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 229759918}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0862c0e6a4761fd4d8b09ea6594b07df, type: 3}
