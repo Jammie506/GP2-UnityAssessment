@@ -8,9 +8,13 @@ public class CameraController : MonoBehaviour
     private Vector2 _smoothV;
     private GameObject _player;
 
+    public Persistence P;
+
     void Awake()
     {
         _player = transform.parent.gameObject;
+
+        Sensitivity = P.mouseSensitivity;
     }
     
     void Update()
