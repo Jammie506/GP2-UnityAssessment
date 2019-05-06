@@ -46,9 +46,9 @@ public class HybridController : MonoBehaviour
         {
             Debug.Log("Fucken found him");
         }
-        else
+        else if(!isVisible)
         {
-
+            Debug.Log("Fucken lost him");
         }
     }
 
